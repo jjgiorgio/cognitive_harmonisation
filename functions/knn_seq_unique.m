@@ -15,7 +15,7 @@ function [full_matrix]=knn_seq_unique(identifier,dappled_matrix,k,optimisek,ref_
 % ref_col: the reference col to compare with to set the optimal k
 
 if optimisek
-    hidden_sample=randsample(1:length(dappled_matrix),round(length(dappled_matrix)*.1));
+    hidden_sample=randsample(1:size(dappled_matrix,1),round(size(dappled_matrix,1)*.1));
     opt_dappled=dappled_matrix;
     grnd_truth=dappled_matrix(hidden_sample,ref_col);
     opt_dappled(hidden_sample,ref_col)=nan;
